@@ -18,22 +18,17 @@ p {
   line-height: 1.2;
   padding-bottom:1rem;
   font-size:3.5vw;
-  color:yellow;
+  color:red;
   text-align: justify;
   &.title {
     font-size:5vw;
-    color:yellow;
+    color:red;
     text-align: center;
   }
 }
-
-// this is a custom gradient to make sure the text fades to black
-// at the top rather than vanishing with a clean edge.
-
 $trans: rgba(0,0,0,0);
 
 @mixin fadegradient {
-  //@TODO : put in fallbacks and webkit version
   background: linear-gradient(to bottom, black 0%,$trans 50%, $trans 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   z-index:100;
 }
@@ -41,7 +36,7 @@ $trans: rgba(0,0,0,0);
 .container {
   width:50vw;
   height:100vh;
-  //border:1px solid yellow;
+
   overflow-y: hidden; /**disable scroll*/
   margin: 0 auto;
   transform: perspective(50vw) rotateX(35deg);
@@ -52,7 +47,6 @@ $trans: rgba(0,0,0,0);
   top:0;
   width:100%;
   height:100%;
-  //transform: translateZ(2rem);
   @include fadegradient;
 }
 
@@ -64,8 +58,6 @@ $trans: rgba(0,0,0,0);
   animation-iteration-count: infinite;
 }
 
-// following is used to do the crawl. can't believe how simple
-// this was :-)
 
 @keyframes scroll {
     from {top: 0rem;}
